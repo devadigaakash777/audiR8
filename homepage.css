@@ -1,0 +1,441 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Porsche Next, Arial Narrow, Arial, Heiti SC, SimHei, sans-serif;
+}
+
+/*------------------------------------------- Header Car Image ------------------------------------------------------*/
+.car-header {
+    position: relative;
+    height: 70vh;
+    width: 100%; 
+}
+
+.audi-symbol{
+    background-image: url('./images/audi_symbol.png'); 
+    background-size: contain;  
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.heading{
+    z-index: 2;
+    display: grid;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 10% auto 10%;
+    grid-template-rows: 10% auto auto;
+    color: white;
+}
+
+.heading > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+	grid-column:1;
+    grid-row:1;
+}
+.head{
+	grid-column:1 / span 3;
+    grid-row:2;
+}
+.extra{
+	grid-column:1 / span 3;
+    grid-row:3;
+}
+
+.head p {
+    font-size: 4rem;
+    font-family: none;
+    transform: scaleX(3);
+    transform-origin: center;
+    margin: 0;
+}
+
+.car-header-video{
+    position: absolute;
+    left: 0;
+}
+/*--------------------------------------------- Menu Section ---------------------------------------------------------*/
+.menu-section {
+    /* background-color: #333333; */
+    padding: 1rem;
+    height: 10vh;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menu-section .menu-item {
+    color: #fff;
+    background-color: #555555;
+    padding: 0.5rem;
+    margin: 0 1rem;
+    border-radius: 5px;
+    min-width: 5vh;
+    text-align: center;
+}
+
+.image-car{
+    position: absolute;
+    width: 60%;
+}
+
+
+/*------------------------------------------- Car Album Section------------------------------------------------------*/
+#modul-wrap{
+    
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 9 / 6;
+    text-align: center;
+    overflow: hidden;
+   
+}
+
+
+
+.back_info {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    aspect-ratio: 16 / 6; 
+    background-color: black;
+}
+
+.car_details{
+    position: absolute;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+.grid-item {
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 30px;
+}
+
+.car-video {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+}
+#video-container {
+    text-align: center;
+    overflow: hidden;
+    background: black;
+}
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.car-content{
+    text-align: start;
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    background-color: black;
+    color: white;
+}
+
+.car-img{
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.car-show {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/*---------------------------------------------- Highlights Section ------------------------------------------------*/
+.highlights-section {
+    background-color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.highlight-item {
+    background-color: #e0e0e0;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/*----------------------------------------Interior/Exterior Section------------------------------------------------- */
+.car-interior-exterior {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.car-interior-exterior img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.btn-toggle {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+
+/*-------------------------------------------- Car Interior Viewing Section-------------------------------------------*/
+
+.image-container-intr {
+    position: relative;
+    max-width: 100%;
+}
+
+.image-container-intr img {
+    width: 100%;
+    height: auto;
+}
+
+.point {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.point:hover {
+    transform: scale(1.2);
+}
+
+.point1 {
+    top: 35%;
+    left: 40%;
+}
+
+.point2 {
+    top: 45%;
+    left: 68%;
+}
+
+.point3 {
+    top: 65%;
+    left: 48%;
+}
+
+.point4 {
+    top: 28%;
+    left: 75%;
+}
+
+.point5 {
+    top: 65%;
+    left: 65%;
+}
+
+.point6 {
+    top: 85%;
+    left: 49%;
+}
+
+.modal-fullwidth {
+    max-width: 90vw;
+    width: 90vw;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.modal-image {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.btn-close {
+    background-color: white;
+    opacity: 1;
+    box-shadow: black 0px 0px 20px 5px;
+    margin: 1rem;
+    right: 0px;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 20px;
+    margin: 0 1rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.blur-background {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+}
+
+
+
+
+
+/*---------------------------------------------------- 3D View Section-----------------------------------------------*/
+.view-3d {
+    overflow: hidden;
+    position: relative;
+    height: 500px;
+    background-image: url('https://via.placeholder.com/1200x600'); /* Replace with actual car image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+#car-container {
+    display: block;
+    width: 100%; 
+    height: 100%; 
+    border: 1px solid #000;
+    margin: 0; 
+}
+
+/*-------------360 Circle-------------*/
+.btn-360 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(51, 51, 51, 0.7);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.frame-3d-view{
+    background-image: url('./images/audir8top.jpg'); 
+    background-size: cover;  
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+/*-------------Zoom Controls----------------*/
+.zoom-controls {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: none;
+    flex-direction: column;
+}
+
+.zoom-controls .btn {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: #294930; 
+    border: none;
+    cursor: pointer;
+}
+
+.zoom-controls .btn:last-child {
+    background-color: #d0c3b6;
+    color: black;
+}
+
+
+/*----------------------------------Media Query For Interior View Section----------------------------------------------*/
+@media (max-width: 575.98px) {
+        .modal-dialog {
+            margin: 0 auto;
+            max-width: 100vw;
+        }
+
+        .modal-fullwidth {
+            width: 100vw;
+        }
+
+        .modal-image {
+            max-width: 100vw;
+        }
+    }
+
+@media (max-width: 400px) {
+        .point {
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+        }
+    }
+
+@media (max-width:750px){
+    .head p {
+        font-size: 2rem;
+    }
+    .car-header {
+        height: 30vh;
+    }
+    #modul-wrap {
+        aspect-ratio: 4 / 6;
+    }
+
+    .back_info {
+        aspect-ratio: 7 / 6;
+    }
+
+    .car_details {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    .car-video {
+        grid-column: 1 / span 6;
+    }
+
+    .car-img {
+        grid-column: 3 / span 4;
+        grid-row: 3;
+    }
+
+    .car-content {
+        text-align: center;
+        grid-column: 1 / span 6;
+    }
+    .car-show {
+        grid-column: 1 / span 2;
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Audi R8 Specialists</title>
+    <link rel="stylesheet" href="./contactinfo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Audi R8</a>
+            <!-- Hamburger Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#header-section">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-section">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-section">About R8</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer-section">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header Section -->
+    <header class="header-section">
+        <div class="header-overlay">
+            <div class="header-content">
+                <h1>Discover the Power of the Audi R8</h1>
+                <p>Contact us today for inquiries, test drives, and more information.</p>
+                <a href="#contact-section" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Information Section -->
+    <section id="contact-section" class="contact-section">
+        <div class="contact-container">
+            <img src="./images/audi_r8_top.jpg" alt="Audi R8" class="audi-r8-image">
+            <div class="contact-form">
+                <h2>Contact Our Audi Specialists</h2>
+                <form id="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <p>&copy; 2024 Audi AG. All rights reserved. | Experience the Thrill of the Audi R8</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
