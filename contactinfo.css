@@ -3,8 +3,9 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'AudiType', sans-serif;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5;*/
     color: #333;
+    background-color: #dae5ef;
 }
 
 /* Navbar Styles */
@@ -19,9 +20,11 @@ body, html {
 
 /* Header Section */
 .header-section {
+    width: 100%;
+    aspect-ratio: 1;
+    max-height: 100vh;
     position: relative;
-    height: 100vh;
-    background: url('./images/audir8top.jpg') no-repeat center center/cover;
+    background: url(./images/audir8top.jpg) no-repeat center center / cover;
 }
 
 .header-overlay {
@@ -74,6 +77,7 @@ body, html {
 .contact-section {
     padding: 50px 0;
     background-color: #e5e5e5;
+    /* background-color: #dae5ef; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +85,7 @@ body, html {
 
 .contact-container {
     display: flex;
+    width: 100%;
     max-width: 1200px;
     background-color: white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -90,7 +95,11 @@ body, html {
 
 .audi-r8-image {
     width: 50%;
-    object-fit: cover;
+    /* object-fit: cover; */
+    background-image: url("./images/audi_r8_top.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .contact-form {
@@ -144,4 +153,18 @@ body, html {
     text-align: center;
     padding: 20px 0;
     font-size: 14px;
+}
+
+@media (max-width:1200px){
+    .audi-r8-image {
+        background-image: url("./images/audi_r7_side.jpg");
+        width: 100%;
+        aspect-ratio: 2;
+    }
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-form {
+        width: 100%;
+    }
 }

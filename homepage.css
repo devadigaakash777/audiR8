@@ -1,13 +1,60 @@
+*{
+    user-select: none;
+}
+:root{
+    --cl1: #ffffffff;
+    --cl2: #84a07cff;
+    --cl3: #26413cff;
+    --cl4: #1a1d1aff;
+    --cl5: #03120eff;
+
+}
 body {
     background-color: #f8f9fa;
     font-family: Porsche Next, Arial Narrow, Arial, Heiti SC, SimHei, sans-serif;
 }
+
+.all-content{
+    margin-top: 56px;
+}
+/*--------------------------------------------Nav Bar----------------------------------------------------------------*/
+.nav-container {
+    margin: 1%;
+    display: flex;
+    flex-wrap: inherit;
+    justify-content: space-between;
+    width: 95%;
+  }
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%280, 0, 0, 0.5%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+  }
 
 /*------------------------------------------- Header Car Image ------------------------------------------------------*/
 .car-header {
     position: relative;
     height: 70vh;
     width: 100%; 
+}
+.cta-button {
+    background-color: #fff;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #333;
+    color: #fff;
 }
 
 .audi-symbol{
@@ -46,12 +93,22 @@ body {
     grid-row:3;
 }
 
+.header-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.head h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .head p {
-    font-size: 4rem;
-    font-family: none;
-    transform: scaleX(3);
-    transform-origin: center;
-    margin: 0;
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 .car-header-video{
@@ -142,9 +199,10 @@ video {
 
 .car-content{
     text-align: start;
+    padding: 2%;
     grid-column: 2 / span 2;
     grid-row: 2;
-    background-color: black;
+    background-color: #1f1f1f;
     color: white;
 }
 
@@ -159,23 +217,118 @@ video {
 }
 
 /*---------------------------------------------- Highlights Section ------------------------------------------------*/
-.highlights-section {
-    background-color: #ffffff;
-    padding: 2rem;
-    text-align: center;
+
+.btn-grp-highlights{
+    display: flex;
+    justify-content: space-evenly;
+}
+.slider-container-wrapper {
+    position: relative;
+    width: 100%;
 }
 
-.highlight-item {
-    background-color: #e0e0e0;
-    height: 150px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
+.slider-container {
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0 20px;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.slider {
+    display: inline-flex;
+}
+
+.slide {
+    display: inline-block;
+    width: 430px;
+    margin-right: 15px;
+    position: relative;
+    color: #fff;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    user-select: none; /* Prevent image selection */
+}
+
+.slide-content {
+    background-color: #000000a3;
+    padding: 2%;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: white;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+}
+
+.slide-content h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.slide-content p {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Dots container */
+.dots-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+/* Scroll buttons */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.scroll-left {
+    left: 0;
+}
+
+.scroll-right {
+    right: 0;
 }
 
 /*----------------------------------------Interior/Exterior Section------------------------------------------------- */
+.intr-extr{
+    max-width: 1080px;
+    min-width: 90% ;
+}
+
 .car-interior-exterior {
     text-align: center;
     padding: 2rem 0;
@@ -283,11 +436,18 @@ video {
     bottom: 20px;
     margin: 0 1rem;
     color: white;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.92);
     padding: 10px;
     border-radius: 5px;
     z-index: 10;
 }
+
+
+.text-overlay p{
+    font-size: 1.3em;
+}
+
+
 
 .blur-background {
     filter: blur(8px);
@@ -299,15 +459,25 @@ video {
 
 
 /*---------------------------------------------------- 3D View Section-----------------------------------------------*/
+
+.mx-1080{
+    max-width: 1080px;
+    min-width: 90%;
+}
+
 .view-3d {
     overflow: hidden;
+    display: flex;
     position: relative;
+    text-align: center;
+    width: 100%;
     height: 500px;
-    background-image: url('https://via.placeholder.com/1200x600'); /* Replace with actual car image */
+    background-image: url(https://via.placeholder.com/1200x600);
     background-size: cover;
     background-position: center;
     border-radius: 10px;
     margin: 2rem 0;
+    justify-content: center;
 }
 
 #car-container {
@@ -318,15 +488,22 @@ video {
     margin: 0; 
 }
 
+.ext-int-btn{
+    position: absolute;
+    padding: 20px;
+}
+
 /*-------------360 Circle-------------*/
 .btn-360 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(51, 51, 51, 0.7);
-    width: 150px;
-    height: 150px;
+    background-color: rgb(0 0 0 / 64%);
+    width: 10%;
+    aspect-ratio: 1;
+    padding: 2%;
+    /* height: 20%; */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -337,7 +514,7 @@ video {
 }
 
 .frame-3d-view{
-    background-image: url('./images/audir8top.jpg'); 
+    background-image: url('./images/audi3D.jpg'); 
     background-size: cover;  
     background-position: center;
     background-repeat: no-repeat;
@@ -349,6 +526,11 @@ video {
     justify-content: center;
     align-items: center;
     
+}
+#loading{
+    display: none; 
+    width: 4rem; 
+    height: 4rem;
 }
 /*-------------Zoom Controls----------------*/
 .zoom-controls {
@@ -366,8 +548,8 @@ video {
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
-    color: #fff;
-    background-color: #294930; 
+    color: #000000;
+    background-color: #ffffff;
     border: none;
     cursor: pointer;
 }
@@ -377,7 +559,14 @@ video {
     color: black;
 }
 
-
+/* Footer Section */
+.footer-section {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
 /*----------------------------------Media Query For Interior View Section----------------------------------------------*/
 @media (max-width: 575.98px) {
         .modal-dialog {
@@ -437,5 +626,24 @@ video {
     }
     .car-show {
         grid-column: 1 / span 2;
+    }
+}
+
+@media(min-width:1200px){
+    .dots-container span:nth-child(4),
+    .dots-container span:nth-child(3){
+        display: none;
+    }
+}
+@media(min-width:825px){
+
+    .dots-container span:nth-child(4){
+        display: none;
+    }
+}
+
+@media(min-width:1620px){
+    .dots-container span{
+        display: none;
     }
 }

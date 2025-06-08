@@ -3,41 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Audi R8 Specialists</title>
+    <link rel="icon" type="image/svg" href="./images/titleIcon.png">
+    <title>Audi | Contact</title>
     <link rel="stylesheet" href="./contactinfo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #dae5ef;
+            font-family: Porsche Next, Arial Narrow, Arial, Heiti SC, SimHei, sans-serif;
+        }
+        .nav-container {
+            margin: 1%;
+            display: flex;
+            flex-wrap: inherit;
+            justify-content: space-between;
+            width: 95%;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+       
+  
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Audi R8</a>
+        <div class="nav-container">
+            <img src="./images/titleIcon.png" width="80px" height="50px">
+            <a class="navbar-brand" href="./index.html">Audi R8</a>
             <!-- Hamburger Menu Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Collapsible Menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#header-section">Home</a>
+                        <a class="nav-link" accesskey="h" title="alt+h" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact-section">Contact Us</a>
+                        <a class="nav-link" accesskey="x" title="alt+x" href="./addNav.html">Configure</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about-section">About R8</a>
+                        <a class="nav-link" accesskey="d" title="alt+d" href="./homepage.html#btn360">3D Model</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#footer-section">Learn More</a>
+                        <a class="nav-link" accesskey="a" title="alt+a" href="./about_us.html">About</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- Header Section -->
     <header class="header-section">
-        <div class="header-overlay">
+        <div class="header-overlay head">
             <div class="header-content">
                 <h1>Discover the Power of the Audi R8</h1>
                 <p>Contact us today for inquiries, test drives, and more information.</p>
@@ -49,23 +78,29 @@
     <!-- Contact Information Section -->
     <section id="contact-section" class="contact-section">
         <div class="contact-container">
-            <img src="./images/audi_r8_top.jpg" alt="Audi R8" class="audi-r8-image">
+          <div class="audi-r8-image"> 
+        </div>  
             <div class="contact-form">
+              
                 <h2>Contact Our Audi Specialists</h2>
                 <form id="contact-form">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <div id="name-error" class="error-message"></div>
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <div id="email-error" class="error-message"></div>
 
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                    <div id="phone-error" class="error-message"></div>
 
                     <label for="message">Message</label>
                     <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <div id="message-error" class="error-message"></div>
 
-                    <button type="submit" class="submit-button">Send Message</button>
+                    <button type="submit" class="submit-button mt-3">Send Message</button>
                 </form>
             </div>
         </div>
@@ -75,7 +110,81 @@
     <footer class="footer-section">
         <p>&copy; 2024 Audi AG. All rights reserved. | Experience the Thrill of the Audi R8</p>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+
+    <script>
+        // Validation for Name, Email, Phone, and Message fields
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("name").addEventListener("input", validateName);
+            document.getElementById("email").addEventListener("input", validateEmail);
+            document.getElementById("phone").addEventListener("input", validatePhone);
+            document.getElementById("message").addEventListener("input", validateMessage);
+        });
+
+        function showError(id, message) {
+            document.getElementById(`${id}-error`).textContent = message;
+        }
+
+        function clearError(id) {
+            document.getElementById(`${id}-error`).textContent = '';
+        }
+
+        function validateName() {
+            const name = document.getElementById("name").value.trim();
+            const namePattern = /^[A-Za-z\s]+$/;
+            if (name === "") {
+                showError("name", "Name is required.");
+                return false;
+            }
+            if (!namePattern.test(name)) {
+                showError("name", "Invalid name! Only letters and spaces are allowed.");
+                return false;
+            }
+            clearError("name");
+            return true;
+        }
+
+        function validateEmail() {
+            const email = document.getElementById("email").value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  
+            if (email === "") {
+                showError("email", "Email is required.");
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                showError("email", "Please enter a valid email address.");
+                return false;
+            }
+            clearError("email");
+            return true;
+        }
+
+
+        function validatePhone() {
+            const phone = document.getElementById("phone").value.trim();
+            const phonePattern = /^\d{10}$/;
+            if (phone === "") {
+                showError("phone", "Phone number is required.");
+                return false;
+            }
+            if (!phonePattern.test(phone)) {
+                showError("phone", "Invalid phone number! Must be a 10-digit number.");
+                return false;
+            }
+            clearError("phone");
+            return true;
+        }
+
+        function validateMessage() {
+            const message = document.getElementById("message").value.trim();
+            if (message === "") {
+                showError("message", "Message is required.");
+                return false;
+            }
+            clearError("message");
+            return true;
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

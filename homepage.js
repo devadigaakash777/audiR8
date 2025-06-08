@@ -5,6 +5,8 @@ const btn360 = document.getElementById('btn360');
 const zoomControls = document.querySelector(".zoom-controls");
 const interiorBtn = document.getElementById('interior');
 const exteriorBtn = document.getElementById('exterior');
+const icon360 = document.getElementById('360btn');
+const loading = document.getElementById('loading');
 
 // Set up the camera with an appropriate aspect ratio and position
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -33,14 +35,17 @@ scene.add(carGroup);
 // Function to load and display the 3D car model
 function displayCarModel() {
   console.log("360° button clicked");
+  icon360.style.display="none";
+  loading.style.display="block";
 
   // Hide the 360° button after interaction
-  btn360.style.display = "none";
+  
   
   // Load the car model using FBXLoader
   const fbxLoader = new THREE.FBXLoader();
   fbxLoader.load('audi.fbx', function(object) {
       console.log("Car model successfully loaded");
+      btn360.style.display = "none";
 
       // Adjust car model scale and positioning
       object.scale.set(0.01, 0.01, 0.01);
@@ -79,8 +84,9 @@ function displayCarModel() {
 
                   // Enable buttons and zoom controls
                   zoomControls.style.display = "flex";
-                  exteriorBtn.removeAttribute("disabled");
-                  interiorBtn.removeAttribute("disabled");
+                  exteriorBtn.style.display="inline-block";
+                  interiorBtn.style.display="inline-block";
+                  console.log("btn clicked");
               }
 
               animationActive = false;
